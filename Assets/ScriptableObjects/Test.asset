@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd6dceb8d405cf4fb6278ebcdfb7ae9, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  dialogueLines:
+  - Heya!
+  - This is a test
+  - A reaaaaally long test
+  - Well, not thaaat long
+  - Cya!
+  spriteA: {fileID: 21300000, guid: 464bd0c79c27491429abd3313e28ef02, type: 3}
+  spriteB: {fileID: 21300000, guid: ebf2c869bbce0de45a3a5ab07e6b7655, type: 3}
