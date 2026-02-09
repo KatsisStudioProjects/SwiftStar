@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 502168561}
   - component: {fileID: 502168560}
   - component: {fileID: 502168559}
+  - component: {fileID: 502168563}
   m_Layer: 0
   m_Name: r (2)
   m_TagString: Untagged
@@ -681,6 +682,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575730633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502168563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502168558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5413aabb4edde4d4aafde8eda0c7e75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestShootable
+  maxHealth: 100
+  bounceScale: 1.3
+  bounceDuration: 0.2
+  dialogueSO: {fileID: 11400000, guid: 2397c2818e1bdfe4fb6240888e33579a, type: 2}
+  randomDialogue: 0
+  dialogueLineIndex: 2
+  hurtEmission: {r: 0, g: 0, b: 5, a: 1}
 --- !u!1 &509448907
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +713,7 @@ GameObject:
   - component: {fileID: 509448910}
   - component: {fileID: 509448909}
   - component: {fileID: 509448908}
+  - component: {fileID: 509448912}
   m_Layer: 0
   m_Name: r (1)
   m_TagString: Untagged
@@ -793,6 +814,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575730633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &509448912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509448907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5413aabb4edde4d4aafde8eda0c7e75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestShootable
+  maxHealth: 100
+  bounceScale: 1.3
+  bounceDuration: 0.2
+  dialogueSO: {fileID: 11400000, guid: 2397c2818e1bdfe4fb6240888e33579a, type: 2}
+  randomDialogue: 0
+  dialogueLineIndex: 1
+  hurtEmission: {r: 0, g: 0, b: 5, a: 1}
 --- !u!1 &516816856
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +845,7 @@ GameObject:
   - component: {fileID: 516816859}
   - component: {fileID: 516816858}
   - component: {fileID: 516816857}
+  - component: {fileID: 516816861}
   m_Layer: 0
   m_Name: r (6)
   m_TagString: Untagged
@@ -905,6 +946,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575730633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &516816861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516816856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5413aabb4edde4d4aafde8eda0c7e75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestShootable
+  maxHealth: 100
+  bounceScale: 1.3
+  bounceDuration: 0.2
+  dialogueSO: {fileID: 11400000, guid: 2397c2818e1bdfe4fb6240888e33579a, type: 2}
+  randomDialogue: 0
+  dialogueLineIndex: 6
+  hurtEmission: {r: 0, g: 0, b: 5, a: 1}
 --- !u!1 &634603529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1388,7 @@ GameObject:
   - component: {fileID: 895933141}
   - component: {fileID: 895933140}
   - component: {fileID: 895933139}
+  - component: {fileID: 895933143}
   m_Layer: 0
   m_Name: r (5)
   m_TagString: Untagged
@@ -1428,6 +1489,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575730633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &895933143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895933138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5413aabb4edde4d4aafde8eda0c7e75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestShootable
+  maxHealth: 100
+  bounceScale: 1.3
+  bounceDuration: 0.2
+  dialogueSO: {fileID: 11400000, guid: 2397c2818e1bdfe4fb6240888e33579a, type: 2}
+  randomDialogue: 0
+  dialogueLineIndex: 5
+  hurtEmission: {r: 0, g: 0, b: 5, a: 1}
 --- !u!1 &1079423251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1732,7 @@ GameObject:
   - component: {fileID: 1377588499}
   - component: {fileID: 1377588498}
   - component: {fileID: 1377588497}
+  - component: {fileID: 1377588501}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -1752,6 +1833,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575730633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377588501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377588496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5413aabb4edde4d4aafde8eda0c7e75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestShootable
+  maxHealth: 100
+  bounceScale: 1.3
+  bounceDuration: 0.2
+  dialogueSO: {fileID: 11400000, guid: 2397c2818e1bdfe4fb6240888e33579a, type: 2}
+  randomDialogue: 0
+  dialogueLineIndex: 0
+  hurtEmission: {r: 0, g: 0, b: 5, a: 1}
 --- !u!1 &1509149751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,7 +2474,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1717394005}
   - component: {fileID: 1717394008}
-  - component: {fileID: 1717394007}
   - component: {fileID: 1717394006}
   m_Layer: 0
   m_Name: CanvasCamera
@@ -2442,14 +2541,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &1717394007
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717394004}
-  m_Enabled: 1
 --- !u!20 &1717394008
 Camera:
   m_ObjectHideFlags: 0
@@ -2726,6 +2817,7 @@ GameObject:
   - component: {fileID: 1814854287}
   - component: {fileID: 1814854286}
   - component: {fileID: 1814854285}
+  - component: {fileID: 1814854289}
   m_Layer: 0
   m_Name: r (3)
   m_TagString: Untagged
@@ -2826,6 +2918,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575730633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814854289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814854284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5413aabb4edde4d4aafde8eda0c7e75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestShootable
+  maxHealth: 100
+  bounceScale: 1.3
+  bounceDuration: 0.2
+  dialogueSO: {fileID: 11400000, guid: 2397c2818e1bdfe4fb6240888e33579a, type: 2}
+  randomDialogue: 0
+  dialogueLineIndex: 3
+  hurtEmission: {r: 0, g: 0, b: 5, a: 1}
 --- !u!1001 &1883946184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3109,9 +3220,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1142729505}
   dialogueText: {fileID: 1713716630}
   characterImage: {fileID: 1509149752}
-  dialogueSO: {fileID: 11400000, guid: 229b19a5c6452a942965841a0e967d8e, type: 2}
-  characterDelay: 0.08
-  delayBetweenLines: 1.5
+  characterDelay: 0.04
+  lineDelay: 1.5
 --- !u!1 &1946620233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,6 +3234,7 @@ GameObject:
   - component: {fileID: 1946620236}
   - component: {fileID: 1946620235}
   - component: {fileID: 1946620234}
+  - component: {fileID: 1946620238}
   m_Layer: 0
   m_Name: r (4)
   m_TagString: Untagged
@@ -3224,6 +3335,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575730633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946620238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946620233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5413aabb4edde4d4aafde8eda0c7e75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestShootable
+  maxHealth: 100
+  bounceScale: 1.3
+  bounceDuration: 0.2
+  dialogueSO: {fileID: 11400000, guid: 2397c2818e1bdfe4fb6240888e33579a, type: 2}
+  randomDialogue: 0
+  dialogueLineIndex: 4
+  hurtEmission: {r: 0, g: 0, b: 5, a: 1}
 --- !u!1 &1961620670
 GameObject:
   m_ObjectHideFlags: 0

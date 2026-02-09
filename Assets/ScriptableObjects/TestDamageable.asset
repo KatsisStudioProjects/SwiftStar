@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd6dceb8d405cf4fb6278ebcdfb7ae9, type: 3}
+  m_Name: TestDamageable
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  dialogueLines:
+  - I dream of... Apples, the sweet smell of apple juice under a tree, during a sunny
+    day...
+  - I dream of... Pancakes, with hazelnuts in them... Theyre soft, tasty...
+  - I dream of... The smell of flowers, under a cold snowy day... Close to my nose
+  - I dream of... A small fairy, helping me dream better
+  - I dream of... Cold water, on a sunny day
+  - I dream of... That one person, holding my hand and smiling with warmth at me
+  - I dream of... The sky
+  spriteA: {fileID: 21300000, guid: 464bd0c79c27491429abd3313e28ef02, type: 3}
+  spriteB: {fileID: 21300000, guid: ebf2c869bbce0de45a3a5ab07e6b7655, type: 3}
