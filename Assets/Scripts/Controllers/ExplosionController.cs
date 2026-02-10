@@ -6,12 +6,13 @@ public class ExplosionController : MonoBehaviour
 
     private void Awake()
     {
-        _player = EnemyManager.Instance.PlayerTransform;
         Invoke("DestroySelf", .8f);
     }
 
     private void Update()
     {
+        _player = EnemyManager.Instance.PlayerTransform;
+
         if (_player != null)
         {
             transform.LookAt(_player);

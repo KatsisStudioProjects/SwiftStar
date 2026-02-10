@@ -22,6 +22,14 @@ public class EnemyManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            SpawnEnemy();
+        }
+    }
+
     [ContextMenu("Spawn Enemy")]
     public void SpawnEnemy()
     {

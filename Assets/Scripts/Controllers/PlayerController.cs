@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [Header("Barrel Roll (Visual Only)")]
     [SerializeField] float rollDuration = 0.35f;
     [SerializeField] GameObject mesh;
+
+    [Header("Assignments")]
+    [SerializeField] TextMeshProUGUI speedText;
 
     Vector2 moveInput;
     Vector2 lookInput;
@@ -46,6 +50,8 @@ public class PlayerController : MonoBehaviour
         HandleBarrelRoll();
         HandleMovement();
         HandleScrollAdditive();
+        
+        speedText.text = autoForward ? $"Speed: {(autoForward ? sprintSpeed + forwardSpeed : moveSpeed):0.0}" : "Press SHIFT to go forward";
     }
 
 
