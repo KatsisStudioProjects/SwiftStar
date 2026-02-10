@@ -1,7 +1,8 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,9 +15,9 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float characterDelay = 0.05f;
-    [SerializeField] private float lineDelay = .5f;
+    [SerializeField] private float lineDelay = 0.5f;
 
-    private Coroutine _typewriterCoroutine;
+    private Coroutine typingCoroutine;
 
     private void Awake()
     {
@@ -27,6 +28,24 @@ public class DialogueManager : MonoBehaviour
         }
 
         Instance = this;
+
+        if (dialoguePanel != null && dialogueText != null)
+            StartCoroutine(WarmUpDialogueUI());
+    }
+
+    // One-frame warm up so TMP / Canvas create their resources up front.
+    private IEnumerator WarmUpDialogueUI()
+    {
+        bool wasActive = dialoguePanel.activeSelf;
+        dialoguePanel.SetActive(true);
+
+        dialogueText.text = " ";
+        dialogueText.ForceMeshUpdate();
+
+        yield return null;
+
+        dialogueText.text = string.Empty;
+        dialoguePanel.SetActive(wasActive);
     }
 
     public void PlayDialogue(DialogueSO dialogueSO, bool random = false, int lineIndex = -1)
@@ -37,21 +56,27 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (_typewriterCoroutine != null)
-            StopCoroutine(_typewriterCoroutine);
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
+        // Preload sprite textures to avoid stalls
+        if (dialogueSO.spriteA != null)
+            _ = dialogueSO.spriteA.texture;
+        if (dialogueSO.spriteB != null)
+            _ = dialogueSO.spriteB.texture;
 
         if (random)
         {
             int index = Random.Range(0, dialogueSO.dialogueLines.Length);
-            _typewriterCoroutine = StartCoroutine(PlayLine(dialogueSO, index));
+            typingCoroutine = StartCoroutine(PlaySingleLine(dialogueSO, index));
         }
         else if (lineIndex >= 0 && lineIndex < dialogueSO.dialogueLines.Length)
         {
-            _typewriterCoroutine = StartCoroutine(PlayLine(dialogueSO, lineIndex));
+            typingCoroutine = StartCoroutine(PlaySingleLine(dialogueSO, lineIndex));
         }
         else
         {
-            _typewriterCoroutine = StartCoroutine(PlayAllLines(dialogueSO));
+            typingCoroutine = StartCoroutine(PlayAllLines(dialogueSO));
         }
     }
 
@@ -59,30 +84,30 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
 
-        for (int l = 0; l < dialogueSO.dialogueLines.Length; l++)
+        for (int i = 0; i < dialogueSO.dialogueLines.Length; i++)
         {
-            yield return PlayLineContent(dialogueSO, l);
+            yield return TypeLine(dialogueSO, i);
 
-            if (l < dialogueSO.dialogueLines.Length - 1)
+            if (i < dialogueSO.dialogueLines.Length - 1)
                 yield return new WaitForSeconds(lineDelay);
         }
 
-        _typewriterCoroutine = null;
+        typingCoroutine = null;
         dialoguePanel.SetActive(false);
     }
 
-    private IEnumerator PlayLine(DialogueSO dialogueSO, int index)
+    private IEnumerator PlaySingleLine(DialogueSO dialogueSO, int index)
     {
         dialoguePanel.SetActive(true);
 
-        yield return PlayLineContent(dialogueSO, index);
+        yield return TypeLine(dialogueSO, index);
         yield return new WaitForSeconds(lineDelay);
 
-        _typewriterCoroutine = null;
+        typingCoroutine = null;
         dialoguePanel.SetActive(false);
     }
 
-    private IEnumerator PlayLineContent(DialogueSO dialogueSO, int index)
+    private IEnumerator TypeLine(DialogueSO dialogueSO, int index)
     {
         dialogueText.text = string.Empty;
 
