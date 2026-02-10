@@ -140,7 +140,6 @@ public class PlayerController : MonoBehaviour
 
         float speed = autoForward ? sprintSpeed + forwardSpeed : moveSpeed;
 
-        // Dash = faster movement while rolling
         if (isRolling)
             speed *= rollMoveMultiplier;
 

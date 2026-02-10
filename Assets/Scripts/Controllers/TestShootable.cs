@@ -16,7 +16,8 @@ public class TestShootable : MonoBehaviour, IDamageable
     private Vector3 _originalScale;
     private Color _originalEmission;
     private float _currentHealth;
-    private bool hasDied;
+    private bool _hasDied;
+
     [ColorUsage(false, true)]
     [SerializeField] private Color hurtEmission = new Color(0f, 0f, 5f, 1f); // HDR blue
 
@@ -53,8 +54,8 @@ public class TestShootable : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        if (hasDied) return;
-        hasDied = true;
+        if (_hasDied) return;
+        _hasDied = true;
         if (dialogueSO != null && DialogueManager.Instance != null)
             DialogueManager.Instance.PlayDialogue(dialogueSO, randomDialogue, dialogueLineIndex);
     }
