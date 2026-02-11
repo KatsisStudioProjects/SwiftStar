@@ -6,7 +6,10 @@ public class GiantLadyHitboxController : MonoBehaviour, IDamageable
     [SerializeField] private GameObject[] clothingGameObjects;
     [SerializeField] private float totalHealth = 300f;
     [SerializeField] private GiantLadyHitboxController[] hitboxesToLock;
+    [SerializeField] private LadyController ladyController;
+    [SerializeField] private GameObject darkSphere;
 
+    public bool isSphereLocked = true;
     public bool IsLocked = false;
     private float startingPieceHealth;
     private float currentPieceHealth;
@@ -15,6 +18,7 @@ public class GiantLadyHitboxController : MonoBehaviour, IDamageable
 
     void Awake()
     {
+        if(isSphereLocked && darkSphere) darkSphere.SetActive(true);
         startingPieceHealth = totalHealth > 0f ? totalHealth : 1f;
         currentPieceHealth = startingPieceHealth;
 
@@ -39,6 +43,7 @@ public class GiantLadyHitboxController : MonoBehaviour, IDamageable
             }
         }
     }
+    public void UnlockSphere() => darkSphere.SetActive(false);
     private void HandleDeath()
     {
         if (hitboxesToLock != null)
@@ -61,6 +66,7 @@ public class GiantLadyHitboxController : MonoBehaviour, IDamageable
     }
     public void TakeDamage(float amount)
     {
+        if (ladyController.IsCensored)return;
         if (IsLocked) return;
         if (isDestroyed) return;
         if (amount <= 0f) return;
