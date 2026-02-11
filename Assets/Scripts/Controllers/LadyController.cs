@@ -1,18 +1,15 @@
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class LadyController : MonoBehaviour
 {
-    private Transform _player;
-
     private void Update()
     {
-        _player = EnemyManager.Instance.PlayerTransform;
+        Vector3 direction = transform.position - Camera.main.transform.position;
+        direction.y = 0;
 
-        if (_player != null)
+        if (direction != Vector3.zero)
         {
-            transform.LookAt(_player);
+            transform.rotation = Quaternion.LookRotation(direction);
         }
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
     }
 }

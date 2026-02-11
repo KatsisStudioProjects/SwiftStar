@@ -19,10 +19,18 @@ public class ShootingController : MonoBehaviour
 
     bool isFiring;
     float nextFireTime;
-
+    Animator animator;
     public void OnFire(InputAction.CallbackContext ctx)
     {
         isFiring = ctx.performed;
+        if (ctx.performed && animator != null)
+        {
+            animator.SetBool("Attacking", true);
+        }
+        else if (ctx.canceled && animator != null)
+        {
+            animator.SetBool("Attacking", false);
+        }
     }
 
     void Update()
@@ -30,7 +38,10 @@ public class ShootingController : MonoBehaviour
         if (isFiring)
             Fire();
     }
-
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
     void Fire()
     {
         if (Time.time < nextFireTime)

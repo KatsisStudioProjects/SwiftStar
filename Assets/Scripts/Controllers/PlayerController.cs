@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     [Header("Movement")]
     [SerializeField] float moveSpeed = 10f;
@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
     Vector2 scroll;
     float forwardSpeed;
+
+    Animator animator;
     void Start()
     {
         Vector3 euler = transform.eulerAngles;
@@ -42,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -150,5 +154,13 @@ public class PlayerController : MonoBehaviour
             speed *= rollMoveMultiplier;
 
         transform.position += move * speed * Time.deltaTime;
+    }
+
+    public void TakeDamage(float amount)
+    {
+        if(animator != null)
+        {
+            animator.SetTrigger("TakeHit");
+        }
     }
 }
