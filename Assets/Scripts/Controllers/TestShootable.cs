@@ -27,6 +27,10 @@ public class TestShootable : MonoBehaviour, IDamageable
         _currentHealth = maxHealth;
 
         var renderer = GetComponent<Renderer>();
+        if(renderer == null)
+        {
+            renderer = GetComponentInChildren<Renderer>();
+        }
         _materialInstance = new Material(renderer.sharedMaterial);
         renderer.material = _materialInstance;
         _originalEmission = _materialInstance.GetColor("_Emission");
